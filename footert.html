@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Open Sans,sans-serif!important;
+            /* background-color: white; */
+            /* font-size: 13px; */
+        }
+        .footer{
+            /* margin-left: 10px; */
+            width: 100%;
+            height: 320px;
+            background-color: #f2f5f5;
+        }
+        .App{
+            display: flex;
+            justify-content: end;
+            margin-right: 50px;
+        }
+        .App>img{
+            height: 320px;
+        }
+        .text{
+            margin: 0px;
+            position: absolute;
+            top: 50px;
+            display: grid;
+            grid-template-rows: 50px 20px 20px;
+            gap: 60px;
+        }
+        .links{
+            margin-top: 30px;
+            width: 60%;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .links>a>img{
+            width: 150px;
+            height: 50px
+        }
+        .text>div{
+            font-size: 30px;
+            color: rgb(109, 105, 105);
+            position: relative;
+            font-weight: bold;
+        }
+        #text-up{
+            padding: 45px 20px 0px 10px;
+        }
+        #text-up>div{
+            margin: auto;
+            padding-top: 10px;
+        }
+        #text1,#text2,#text3{
+            width: 100%;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            /* gap: 5px; */
+            line-height: .5;
+            align-items: center;
+            color: rgb(109, 105, 105);
+            font-size: 12px;
+            word-spacing: 4px;
+            margin-bottom: 20px;
+        }
+        #text1>h3{
+            display: inline-block;
+            margin-right: 5px;
+            /* font-size: 15px; */
+        }
+        a{
+            color: rgb(109, 105, 105);
+        }
+        a:link{
+            text-decoration: none;
+        }
+        a:hover{
+            color: cadetblue;
+        }
+        #text1>span>a::after{
+            content: "|";
+            margin: 1px;
+            color: rgb(109, 105, 105);
+        }
+        #text2>span>a::after{
+            content: "|";
+            margin: 1px;
+            color: rgb(109, 105, 105);
+        }
+        #text3>span>a::after{
+            content: "|";
+            margin: 1px;
+            color: rgb(109, 105, 105);
+        }
+        .detailed{
+            font-size: 13px;
+            width: 100%;
+            color: rgb(109, 105, 105);
+            line-height: 1.5;
+        }
+        .detailed>h3{
+            margin-bottom: -5px;
+            font-size: 12px;
+            color: rgb(81, 80, 80);
+        }
+        #text3+h2{
+            font-size: 15px;
+            color: rgb(109, 105, 105);
+            font-weight: bold;
+            margin-bottom: -4px;
+        }
+        #about{
+            width: 100%;
+            margin-top: 50px;
+            height: 600px;
+           background-color:  #f4f7fb;
+            /* border: 1px solid green */
+        }
+        #details{
+            width: 100%;
+            /* height: 600px; */
+            margin-top: 10px;
+            margin-left: 10px;
+            display: grid;
+            
+            grid-template-columns: 1fr 1fr 1fr 0.75fr;
+            justify-content: space-evenly;
+            background-color: #f4f7fb;
+        }
+        #details>div>.head{
+            color: rgb(112, 112, 112);
+            font: 20px;
+            margin: 20px 0px 10px 0px;
+            font-weight: bold;
+        }
+        #details>div>div>a{
+            color: gray;
+            font: 20px;
+            margin: 0px;
+        }
+        #details>div>div{
+            margin: 10px 0px 15px 0px;
+        }
+        #brands{
+            margin: 0;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.7fr 1.3fr;
+            margin-bottom: 50px;
+            
+        }
+        #brands>div:first-child{
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            color: rgb(112, 112, 112);
+        }
+        #brands>div:last-child{
+            text-align: end;
+        }
+        #brands>div:first-child>div>img{
+            height: 63%;
+            width: 93%;
+        }
+        #details+div{
+            margin-top: 0px;
+            color: rgb(80, 80, 80);
+            margin-bottom: 20px;
+            border: 1px solid white;
+            background-color: #f4f7fb;
+        }
+        #details+div>div:first-child{
+            color:  rgb(90, 90, 90);
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #links>div:nth-child(2){
+             width: 100%;
+             margin-top: 20px;
+             display: grid;
+             grid-template-columns: repeat(4,1fr);
+        }
+        #links>div:nth-child(2)>a>img{
+            width: 80%;
+            height: 90%;
+            border-radius: 50%;
+            background-color: rgb(16, 132, 126);
+            color: rgb(16, 132, 126);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="footer">
+        <div class="text link">
+            <div>Simplifying Healthcare, Impacting Lives
+            </div>
+            <div>
+            Download the App for free
+            <div class="links">
+            <a href="https://play.google.com/store/apps/details?id=com.phonegap.rxpal&hl=en_IN&gl=US&utm_source=web&utm_medium=footer"><img src="https://assets.pharmeasy.in/web-assets/dist/4e4f1cab.png" alt=""></a>
+            <a href="https://apps.apple.com/in/app/pharmeasy-healthcare-app/id982432643"><img src="https://assets.pharmeasy.in/web-assets/dist/83095c03.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="App">
+            <img src="https://assets.pharmeasy.in/web-assets/dist/1d1ccea7.jpg" alt="">
+        </div>
+    </div>
+    <div id="text-up">
+        <div>
+            <div id="text1">
+                <h3>Top-Selling Healthcare Products:</h3>
+                <span><a href="">Accu-Chek Active - 100 Strips</a></span>
+                <span><a href="">Supradyn Multivitamin Tablets</a></span>
+                <span><a href="">DR Morepen BG 03 - 50 Strips</a></span>
+                <span><a href="">Dettol Antiseptic Liquid</a>|</span>
+                <span><a href="">Ensure Diabetes Care Vanilla Sugar Free Jar</a></span>
+                <span><a href="">Dettol Instant Hand Sanitizer</a></span>
+                <span><a href="">Everherb Shilajit</a></span>
+                <span><a href="">  Softovac SF Powder</a></span>
+                <span><a href="">Pediasure Premium Chocolate Refill</a></span>
+            </div>
+            <div id="text2">
+                <h3>Top-Selling Healthcare Products: </h3>
+                <span><a href="">Accu-Chek Active - 100 Strips</a></span>
+                <span><a href="">Supradyn Multivitamin Tablets</a></span>
+                <span><a href="">DR Morepen BG 03 - 50 Strips</a></span>
+                <span><a href="">Dettol Antiseptic Liquid</a></span>
+                <span><a href="">Ensure Diabetes Care Vanilla Sugar Free Jar</a></span>
+                <span><a href="">Dettol Instant Hand Sanitizer</a></span>
+                <span><a href="">Everherb Shilajit</a></span>
+                <span><a href="">  Softovac SF Powder</a></span>
+                <span><a href="">Pediasure Premium Chocolate Refill</a></span>
+            </div>
+            <div id="text3">
+                <h3>Top-Selling Healthcare Products: </h3>
+                <span><a href="">Accu-Chek Active - 100 Strips</a></span>
+                <span><a href="">Supradyn Multivitamin Tablets</a></span>
+                <span><a href="">DR Morepen BG 03 - 50 Strips</a></span>
+                <span><a href="">Dettol Antiseptic Liquid</a></span>
+                <span><a href="">Ensure Diabetes Care Vanilla Sugar Free Jar</a></span>
+                <span><a href="">Dettol Instant Hand Sanitizer</a></span>
+                <span><a href="">Everherb Shilajit</a></span>
+                <span><a href="">  Softovac SF Powder</a></span>
+                <span><a href="">Pediasure Premium Chocolate Refill</a></span>
+            </div>
+            <h2>Your One-Stop Online Pharmacy - PharmEasy</h2>
+            <div  class="detailed">
+                <h3>We've got India Covered!</h3>
+                <p>We now deliver in 1000+ cities and towns across 22000+ pin codes. We thereby cover every nook and corner of the country! The major cities in which we deliver include Mumbai, Kolkata, Delhi, Bengaluru, Ahmedabad, Hyderabad, Chennai, Thane, Howrah, Pune, Gurgaon, Navi Mumbai, Jaipur, Noida, Lucknow, Ghaziabad & Vadodara.</p>
+            </div>
+            <div class="detailed">
+                <h3>Say Goodbye to All Your Healthcare Worries With PharmEasy!</h3>
+                <p>PharmEasy is here to help you take it easy! We are amongst one of India's top online pharmacy and medical care platforms. It enables you to order pharmaceutical and healthcare products online by connecting you to registered retail pharmacies and get them delivered to your home. We are an online medical store, making your purchase easy, simple, and affordable!</p>
+            </div>
+            <div class="detailed">
+                <h3>How Are We Making Lives Simpler With Our Online Medical Store?</h3>
+                <p>Our doorstep delivery service is available in PAN-India across top cities like Bangalore, Delhi, Mumbai, Kolkata, Hyderabad, Gurgaon, Noida, Pune, etc. Our online medical store also allows you to choose from 1 lakh+ products incl. OTC products and medical equipment. PharmEasy is a one-stop online medical platform where you can also book diagnostic tests including blood tests, full-body checkups, and other preventive health check-ups at an affordable cost, right from the comfort of your home. We have partnered with trusted & certified labs that arrange for a sample pick-up from the convenience of your home. They also provide you with timely reports.</p>
+            </div>
+            <div class="detailed">
+                <h3>Why Are We The Most Preferred Online Pharmacy?</h3>
+                <p>Lucrative offers on our platform allow you to make payment online and via various payment wallets at a discounted price. Alternatively, you can also choose to pay cash on delivery as we deliver the products at your doorstep. We cater to all your pharmaceutical needs and also make ordering medicines online a hassle-free experience for you. We connect you only with registered retail pharmacies & certified diagnostic labs. We ensure that healthcare is affordable to all and make the process of ordering online simple.</p>
+            </div>
+            <div class="detailed">
+                <h3>Sit Back & Relax While You Get Your Essentials Delivered Every Month!</h3>
+                <p>It’s tough to remember to refill every month, especially in the case of chronic diseases. PharmEasy’s subscription service not only ensures that you are reminded of your refills but also makes sure that you are never out on your medical essentials. You will get a reminder every month and your order will be delivered at your convenience!
+                </p>
+            </div>
+            <div class="detailed">
+                <h3>Access medical and health information:</h3>
+                <p>PharmEasy delivers reliable and accurate medical information that has been carefully written, vetted and validated by our health experts. Our specialists curate high-quality and most reliable literature about medicines, illnesses, lab tests, Ayurvedic and over the counter health products.</p>
+                <h3>We Believe in "Simplifying Healthcare, Impacting Lives!"</h3>
+            </div>
+        </div>     
+    </div>
+    <div id="about">
+        <div id="details">  
+            <div>
+               <div class="head">Company</div>
+               <div><a href="https://pharmeasy.in/about-us">About Us</a></div>
+               <div><a href="https://pharmeasy.in/careers/">Careers</a></div>
+               <div><a href="https://pharmeasy.in/blog">blog</a></div>
+               <div><a href="https://manch.pharmeasy.in/PharmEasyPartner.html">Partner with PharmEasy</a></div>
+               <div><a href="https://pharmeasy.typeform.com/to/whj0JOdy">Sell at Pharmeasy</a></div>
+               <div class="head">Our Services</div>
+               <div><a href="https://pharmeasy.in/online-medicine-order">Our Madicine</a></div>
+               <div><a href="https://pharmeasy.in/health-care">Healthcare Products</a></div>
+               <div><a href="https://pharmeasy.in/diagnostics">Lab test</a></div>
+               <div><a href="https://pharmeasy.in/franchisee-labs">find nearest center</a></div>
+            </div>
+            <div>
+                <div class="head">Features Catagories</div>
+                <div><a href="https://pharmeasy.in/health-care/covid-essentials-109">Covid Essentails</a></div>
+                <div><a href="https://pharmeasy.in/health-care/personal-care-877">Personal Care</a></div>
+                <div><a href="https://pharmeasy.in/health-care/health-food-and-drinks-648">Health food and Drinks</a></div>
+                <div><a href="https://pharmeasy.in/health-care/beauty-8881">Beaty</a></div>
+                <div><a href="https://pharmeasy.in/health-care/skin-care-93">Skin Care</a></div>
+                <div><a href="https://pharmeasy.in/health-care/home-care-734">Home Care</a></div>
+                <div><a href="https://pharmeasy.in/health-care/ayurvedic-care-765">Ayurvedic Care</a></div>
+                <div><a href="https://pharmeasy.in/health-care/sexual-wellness-575">Sexual health</a></div>
+                <div><a href="https://pharmeasy.in/health-care/fitness-supplements-623">Fitness supliment</a></div>
+                <div><a href="https://pharmeasy.in/health-care/mother-and-baby-care-838">Mother & Baby Care</a></div>
+                <div><a href="https://pharmeasy.in/health-care/healthcare-devices-717">Health Care devices</a></div>
+                <div><a href="https://pharmeasy.in/health-care/health-condition-693">Health Condition</a></div>
+                <div><a href="https://pharmeasy.in/health-care/diabetic-care-145">Diabitic Care</a></div>
+                <div><a href="https://pharmeasy.in/health-care/elderly-care-750">Elderly Care</a></div>
+                <div><a href="https://pharmeasy.in/health-care/accessories-and-wearables-788">Accessories and Wearables</a></div>
+                <div><a href="https://pharmeasy.in/health-care/value-store-9297">Value Store</a></div>
+            </div>
+            <div>
+                <div class="head">Need help</div>
+                <div><a href="https://pharmeasy.in/online-medicine-order/browse">Browse all medicines</a></div>
+                <div><a href="https://pharmeasy.in/molecules">Browse all Molucules</a></div>
+                <div><a href="https://pharmeasy.in/online-medicine-order/browse/areas">Browse all Cities and Areas</a></div>
+                <div><a href="https://pharmeasy.in/franchise-stores">Browse all Stores</a></div>
+                <div><a href="https://pharmeasy.in/help">FAQ</a></div>
+                <div class="head">Policy Info</div>
+                <div><a href="https://pharmeasy.in/legal/editorial-policy">Edutorial Policy</a></div>
+                <div><a href="https://pharmeasy.in/legal/privacy-policy">Private Policy</a></div>
+                <div><a href="https://pharmeasy.in/vulnerability-disclosure-policy">Vulnerability Disclosure Policy</a></div>
+                <div><a href="https://pharmeasy.in/legal/terms-and-conditions">Terms and Conditions</a></div>
+                <div><a href="https://pharmeasy.in/customer-support-policy">Customer Support Policy</a></div>
+                <div><a href="https://pharmeasy.in/return-policy">Return Policy</a></div>
+            </div>
+            <div id="links">
+                <div class="head">Follow Us</div>
+                <div>
+                <a href="https://www.instagram.com/pharmeasyapp/"><img src="https://tse1.mm.bing.net/th?id=OIP.Vdbd9h5fmpd8AGWqpPfznwHaHa&pid=Api&P=0" alt=""></a>
+                <a href="https://www.instagram.com/pharmeasyapp/"><img src="https://tse1.mm.bing.net/th?id=OIP.u5AkQtCIDplzKqGq2gwI3gHaHY&pid=Api&P=0" alt=""></a>
+                <a href="https://www.instagram.com/pharmeasyapp/"><img src="https://tse2.mm.bing.net/th?id=OIP.T-8IGeIV3fOZ8PkLg-LvtAHaHa&pid=Api&P=0" alt=""></a>
+                <a href="https://www.instagram.com/pharmeasyapp/"><img src="https://tse2.mm.bing.net/th?id=OIP.qS7buwygbN2kuyyLc0KFKgHaHa&pid=Api&P=0" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div >
+            <div>Our Payment Partners</div>
+            <div id="brands">
+                <div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/af0c6812.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/0e010044.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/1066bb1f.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/3a1a533d.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/fbea1701.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/4733a49d.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/b278e536.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/0aca2077.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/44a51ca5.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/d058b00d.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/e9445364.svg" alt=""></div>
+                    <div><img src="https://assets.pharmeasy.in/web-assets/dist/6e09c713.svg" alt=""></div>
+                </div>
+                <div>© 2022 PharmEasy. All Rights Reserved</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
