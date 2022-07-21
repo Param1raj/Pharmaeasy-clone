@@ -5,199 +5,267 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            font-family: Open Sans,sans-serif!important;
-            /* background-color: white; */
-            /* font-size: 13px; */
-        }
-        .footer{
-            /* margin-left: 10px; */
-            width: 100%;
-            height: 320px;
-            background-color: #f2f5f5;
-        }
-        .App{
-            display: flex;
-            justify-content: end;
-            margin-right: 50px;
-        }
-        .App>img{
-            height: 320px;
-        }
-        .text{
-            margin: 0px;
-            position: absolute;
-            top: 50px;
-            display: grid;
-            grid-template-rows: 50px 20px 20px;
-            gap: 60px;
-        }
-        .links{
-            margin-top: 30px;
-            width: 60%;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .links>a>img{
-            width: 150px;
-            height: 50px
-        }
-        .text>div{
-            font-size: 30px;
-            color: rgb(109, 105, 105);
-            position: relative;
-            font-weight: bold;
-        }
-        #text-up{
-            padding: 45px 20px 0px 10px;
-        }
-        #text-up>div{
-            margin: auto;
-            padding-top: 10px;
-        }
-        #text1,#text2,#text3{
-            width: 100%;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            /* gap: 5px; */
-            line-height: .5;
-            align-items: center;
-            color: rgb(109, 105, 105);
-            font-size: 12px;
-            word-spacing: 4px;
-            margin-bottom: 20px;
-        }
-        #text1>h3{
-            display: inline-block;
-            margin-right: 5px;
-            /* font-size: 15px; */
-        }
-        a{
-            color: rgb(109, 105, 105);
-        }
-        a:link{
-            text-decoration: none;
-        }
-        a:hover{
-            color: cadetblue;
-        }
-        #text1>span>a::after{
-            content: "|";
-            margin: 1px;
-            color: rgb(109, 105, 105);
-        }
-        #text2>span>a::after{
-            content: "|";
-            margin: 1px;
-            color: rgb(109, 105, 105);
-        }
-        #text3>span>a::after{
-            content: "|";
-            margin: 1px;
-            color: rgb(109, 105, 105);
-        }
-        .detailed{
-            font-size: 13px;
-            width: 100%;
-            color: rgb(109, 105, 105);
-            line-height: 1.5;
-        }
-        .detailed>h3{
-            margin-bottom: -5px;
-            font-size: 12px;
-            color: rgb(81, 80, 80);
-        }
-        #text3+h2{
-            font-size: 15px;
-            color: rgb(109, 105, 105);
-            font-weight: bold;
-            margin-bottom: -4px;
-        }
-        #about{
-            width: 100%;
-            margin-top: 50px;
-            height: 600px;
-           background-color:  #f4f7fb;
-            /* border: 1px solid green */
-        }
-        #details{
-            width: 100%;
-            /* height: 600px; */
-            margin-top: 10px;
-            margin-left: 10px;
-            display: grid;
-            
-            grid-template-columns: 1fr 1fr 1fr 0.75fr;
-            justify-content: space-evenly;
-            background-color: #f4f7fb;
-        }
-        #details>div>.head{
-            color: rgb(112, 112, 112);
-            font: 20px;
-            margin: 20px 0px 10px 0px;
-            font-weight: bold;
-        }
-        #details>div>div>a{
-            color: gray;
-            font: 20px;
-            margin: 0px;
-        }
-        #details>div>div{
-            margin: 10px 0px 15px 0px;
-        }
-        #brands{
-            margin: 0;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.7fr 1.3fr;
-            margin-bottom: 50px;
-            
-        }
-        #brands>div:first-child{
-            display: grid;
-            grid-template-columns: repeat(12,1fr);
-            color: rgb(112, 112, 112);
-        }
-        #brands>div:last-child{
-            text-align: end;
-        }
-        #brands>div:first-child>div>img{
-            height: 63%;
-            width: 93%;
-        }
-        #details+div{
-            margin-top: 0px;
-            color: rgb(80, 80, 80);
-            margin-bottom: 20px;
-            border: 1px solid white;
-            background-color: #f4f7fb;
-        }
-        #details+div>div:first-child{
-            color:  rgb(90, 90, 90);
-            margin-bottom: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        #links>div:nth-child(2){
-             width: 100%;
-             margin-top: 20px;
-             display: grid;
-             grid-template-columns: repeat(4,1fr);
-        }
-        #links>div:nth-child(2)>a>img{
-            width: 80%;
-            height: 90%;
-            border-radius: 50%;
-            background-color: rgb(16, 132, 126);
-            color: rgb(16, 132, 126);
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="lab-test">
+            <div class="heading">
+                <div>Frequently Booked Lab tests</div>
+                <!-- <div>
+                    <button><img src="https://tse3.mm.bing.net/th?id=OIP.TxUcaYa1v7uJHZ5oPKr52gHaFf&pid=Api&P=0" alt=""></button>
+                    <button><img src="https://tse3.mm.bing.net/th?id=OIP.5VQYxewnTzeTJVh2Pds9TwHaGW&pid=Api&P=0" alt=""></button>
+                </div> -->
+            </div>
+            <div class="divs">
+                <div class="list">
+                    <ul>
+                        <li>100+ Cirtified Labs</li>
+                        <li>10000 Happy Customers</li>
+                        <li>Free Sample Collection</li>
+                        <li>Accurate Reports</li>
+                    </ul>
+                </div>
+                <div class="scroll">
+                    <img src="https://assets.pharmeasy.in/web-assets/dist/51ffd21a.svg" alt="">
+                    <div>Comprehensive Full Body Chec.....</div>
+                    <div>available at 1 Critified lab</div>
+                    <p>Including 87 tests</p>
+                    <div>
+                        <p>$1,499</p>
+                        <p>Onwars</p>
+                        <Button>Book Now ></Button>
+                    </div>
+                </div>
+                <div class="scroll">
+                    <img src="https://assets.pharmeasy.in/web-assets/dist/909edb3f.svg" alt="">
+                    <div>Post Pranrial Blood Sugar (PPBS)</div>
+                    <div>available at 1 Critified lab</div>
+                    <p>Including 87 tests</p>
+                    <div>
+                        <p>$1,499</p>
+                        <p>Onwars</p>
+                        <Button>Book Now ></Button>
+                    </div>
+                </div>
+                <div class="scroll">
+                    <img src="https://assets.pharmeasy.in/web-assets/dist/51ffd21a.svg" alt="">
+                    <div>Comprehensive Full Body Chec.....</div>
+                    <div>available at 1 Critified lab</div>
+                    <p>Including 87 tests</p>
+                    <div>
+                        <p>$1,499</p>
+                        <p>Onwars</p>
+                        <Button>Book Now ></Button>
+                    </div>
+                </div>
+                <div class="scroll">
+                    <img src="https://assets.pharmeasy.in/web-assets/dist/51ffd21a.svg" alt="">
+                    <div>Comprehensive Full Body Chec.....</div>
+                    <div>available at 1 Critified lab</div>
+                    <p>Including 87 tests</p>
+                    <div>
+                        <p>$1,499</p>
+                        <p>Onwars</p>
+                        <Button>Book Now ></Button>
+                    </div>
+                </div>
+                <div class="scroll">
+                    <img src="https://assets.pharmeasy.in/web-assets/dist/51ffd21a.svg" alt="">
+                    <div>Comprehensive Full Body Chec.....</div>
+                    <div>available at 1 Critified lab</div>
+                    <p>Including 87 tests</p>
+                    <div>
+                        <p>$1,499</p>
+                        <p>Onwars</p>
+                        <Button>Book Now ></Button>
+                    </div>
+                </div>
+                <div class="scroll">
+                    <img src="https://assets.pharmeasy.in/web-assets/dist/51ffd21a.svg" alt="">
+                    <div>Comprehensive Full Body Chec.....</div>
+                    <div>available at 1 Critified lab</div>
+                    <p>Including 87 tests</p>
+                    <div>
+                        <p>$1,499</p>
+                        <p>Onwars</p>
+                        <Button>Book Now ></Button>
+                    </div>
+                </div>
+                <div class="scroll">
+                    <img src="https://assets.pharmeasy.in/web-assets/dist/909edb3f.svg" alt="">
+                    <div>View All</div>
+                    <div>Lab Testes ></div>
+                </div>
+            </div>
+    </div>
+    <div class="featured">
+        <div>Featured Brands</div>
+        <div>
+            <div><a target="_blank" href="https://pharmeasy.in/health-wellness/store/glucon-d-23669"><img src="https://cms-contents.pharmeasy.in/carousel_item/1f27723d1f3-Glucon-D.jpg?dim=146x0&dpr=1&q=100" alt=""></a></div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/himalaya-50520"><img src="https://cms-contents.pharmeasy.in/carousel_item/7326ee948ff-web_Himalaya.jpg?dim=146x0&dpr=1&q=100" alt=""></a></div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/7798"><img src="https://cms-contents.pharmeasy.in/carousel_item/d5f9240e29a-SUGARFREE.png?dim=146x0&dpr=1&q=100" alt=""></a>
+            </div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/liveasy-71972"><img src="https://cms-contents.pharmeasy.in/carousel_item/c572570b5ce-Liveasy.jpg?dim=146x0&dpr=1&q=100" alt=""></a></div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/huggies-487021"><img src="https://cms-contents.pharmeasy.in/carousel_item/c72feb4bd7a-web_Huggies.jpg?dim=146x0&dpr=1&q=100" alt=""></a></div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/wellbeing-nutrition-72650"><img src="https://cms-contents.pharmeasy.in/carousel_item/729f07d6c49-04.jpg?dim=146x0&dpr=1&q=100" alt=""></a></div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/revital-7117"><img src="https://cms-contents.pharmeasy.in/carousel_item/2d987111a15-Featured-banner_Revital.png?dim=146x0&dpr=1&q=100" alt=""></a></div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/volini-1195"><img src="https://cms-contents.pharmeasy.in/carousel_item/c72feb4bd7a-web_Huggies.jpg?dim=146x0&dpr=1&q=100" alt=""></a></div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/pentasure-15122"><img src="https://cms-contents.pharmeasy.in/carousel_item/729f07d6c49-04.jpg?dim=146x0&dpr=1&q=100" alt=""></a></div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/sirona-55761"><img src="https://cms-contents.pharmeasy.in/carousel_item/2d987111a15-Featured-banner_Revital.png?dim=146x0&dpr=1&q=100" alt=""></a>
+            </div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/abzorb-8584"><img src="https://cms-contents.pharmeasy.in/carousel_item/ac01791d842-Featured-banner_Volini.png?dim=146x0&dpr=1&q=100" alt=""></a>
+            </div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/everherb-71970"><img src="https://cms-contents.pharmeasy.in/carousel_item/1faa7b6995e-Pentasure_Dweb.jpg?dim=146x0&dpr=1&q=100" alt=""></a></div>
+            <div><a href="https://pharmeasy.in/health-wellness/store/pharmeasy-71460"><img src="https://cms-contents.pharmeasy.in/carousel_item/760a5f6f612-web_sirona.jpg?dim=146x0&dpr=1&q=100" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="deal">
+        <div class="header">
+            <img src="https://assets.pharmeasy.in/web-assets/dist/cc9b301d.svg" alt="">
+            <div>Deals of the Day</div>
+            <div class="timer">Timer left</div>
+        </div>
+        <div class="deals">
+            <div>
+                <div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div>
+            </div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/105920/himalaya-liv52-tablets-100s-2-1654078567.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Himalya Liv.52</div>
+                <div>100 Tablates</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.130</span> </p>
+                <div>Rs.104</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/J51815/liveasy-wellness-apple-cider-vinegar-with-mother-improves-metabolism-500ml-bottle-2-1654165611.jpg?dim=224x0&dpr=1&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I00596/revital-h-women-multivitamin-with-calcium-zinc-ginseng-for-immunity-strong-bones-energy-30-tablets-1-1654168794.jpg?dim=224x0&dpr=1&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+            <div><div><img src="https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=224x0&dpr=2&q=100" alt=""></div>
+                <div>Sirona feminine Camp</div>
+                <div>Reliefe Patch Packet of 5's</div>
+                <p>MRP<span style="text-decoration: line-through;">Rs.249</span> </p>
+                <div>Rs.244</div></div>
+        </div>
+    </div>
     <div class="footer">
         <div class="text link">
             <div>Simplifying Healthcare, Impacting Lives
