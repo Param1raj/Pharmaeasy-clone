@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Signup.css">
+    <title>Sign Up</title>
+</head>
+<body>
+        <div class="nav">
+            <div>
+            <a href="footert.html"><img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png" alt=""></a>
+            <img src="https://assets.pharmeasy.in/web-assets/dist/1fe1322a.svg" alt="">
+            </div>
+        </div>
+        
+        <form action="">
+        <h3>Quik Login / Register </h3>
+        <button>91+ |</button>
+        <input type="Number" id="number" placeholder="| Enter Your Phone Number">
+        <br>
+        <input type="submit" id="submit" value="Send OTP">
+        <p>By clicking continue, you agree with our <a href="">Privacy Policy</a></p>
+        </form>
+</body>
+</html>
+<script>
+    let form= document.querySelector("form");
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let input=form.querySelector("#number").value;
+        // console.log(input);
+        if(input.length<10 || input.length>10){
+            alert("Please enter a valid Number");
+        }
+        else{
+            localStorage.setItem("number",input);
+            window.location.href="Login.html"
+        }
+    })
+</script>

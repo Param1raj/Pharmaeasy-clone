@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Signup.css">
+    <title>Loging in</title>
+</head>
+<body>
+        <div class="nav">
+            <div>
+            <a href="footert.html"><img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png" alt=""></a>
+            <img src="https://assets.pharmeasy.in/web-assets/dist/1fe1322a.svg" alt="">
+            </div>
+        </div>
+        
+        <form action="">
+        <h3>Enter OTP</h3>
+        <button>OTP</button>
+        <input type="Number" id="number" placeholder="">
+        <br>
+        <input type="submit" id="submit" value="Continue">
+        <p>By clicking continue, you agree with our <a href="">Privacy Policy</a></p>
+        </form>
+</body>
+</html>
+<script>
+    let form=document.querySelector("form");
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let input=form.querySelector("#number").value
+        if(input=="12345"){
+            alert("log in successful");
+            window.location.href="footert.html"
+            localStorage.setItem("Name",input);
+        }
+        else{
+            alert("incorrect OTP");
+        }
+    })
+</script>
