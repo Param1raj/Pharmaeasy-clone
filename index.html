@@ -30,13 +30,12 @@
     form.addEventListener("submit",function(event){
         event.preventDefault();
         let input=form.querySelector("#number").value;
-        // console.log(input);
         if(input.length<10 || input.length>10){
             alert("Please enter a valid Number");
         }
         else{
             localStorage.setItem("number",input);
-            window.location.href="Login.html"
+            window.location.href="Login.html";
         }
     })
 </script>
